@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinobilletter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="index.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Bestilling av kinobilletter</h1>
+        <!--tabell som inneholder bestillingsinformasjonen-->
+        <table>
+            <tr>
+                <td>Velg film:</td>
+                <td>
+                    <div class="form-group mb-3">
+                    <!--rullegardinmeny for å velge film, når filmen er valgt vil funksjonen
+                    velgFilm() bli kalt.-->
+                    <select id="film" onchange="velgFilm();" class="form-control">
+                        <option value="">Velg film her</option>
+                        <option>Barbie</option>
+                        <option>Mean Girls</option>
+                        <option>Konvoi</option>
+                        <option>Wonka</option>
+                        <option>Dune 2</option>
+                        <option>Anyone But You</option>
+                        <option>Argylle</option>
+                        <option>Dark Windows</option>
+                        <option>Dream Scenario</option>
+                        <option>The Beekeeper</option>
+                        <option>The Holdovers</option>
+                    </select>
+                    <!-- feilmelding som vises for "velgFilm"-->
+                    <p id="feilmelding"></p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <div class="form-group mb-3">
+                <td>Antall billetter:</td>
+                <td><input type="text" id="antallBilletter" onblur="validerAntallBilletter();" class="form-control" /></td>
+                <td id="antallBilletterFeil"></td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group mb-3>">
+                <td>Fornavn:</td>
+                <td><input type="text" id="fornavn" onblur="validerFornavn();" class="form-control" /></td>
+                <td id="fornavnFeil"></td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group mb-3>">
+                <td>Etternavn:</td>
+                <td><input type="text" id="etternavn" onblur="validerEtternavn();" class="form-control" /></td>
+                <td id="etternavnFeil"></td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group mb-3>">
+                <td>Telefonnummer:</td>
+                <td><input type="text" id="telefonnummer" onblur="validerTelefonnummer();" class="form-control"/></td>
+                <td id="telefonnummerFeil"></td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group mb-3>">
+                <td>Epost:</td>
+                <td><input type="text" id="epost" onblur="validerEpost();" class="form-control" /></td>
+                <td id="epostFeil"></td>
+                </div>
+            </tr>
+        </table>
+        <!--knapp for å kjøpe billetten, når den klikkes vil kjop() funskjonen bli kalt.-->
+        <button class="btn btn-success" value="Kjøp billett" onclick="kjop()">Kjøp billett</button>
+        <br>
+        <!--registrerte billetter-->
+        <h3>Registrerte billetter:</h3>
+        <table id="billettene" class="table">
+            <tr>
+                <th>Film</th>
+                <th>Antall</th>
+                <th>Fornavn</th>
+                <th>Etternavn</th>
+                <th>Telefonnummer</th>
+                <th>Epost</th>
+            </tr>
+        </table>
+        <!--knapp som sletter billetter som er lagt inn i kjop()-->
+        <button class="btn btn-danger" value="Slett billetter" onclick="slett()">Slett alle billetter</button>
+    </div>
+</div>
+</body>
+</html>
