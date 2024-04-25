@@ -6,6 +6,8 @@ GitHub brukernavn: gaavisures
 
 GitHub repo URL: https://github.com/gaavisures/Oblig1.git
 
+Video av Oblig 3: 
+
 Fullt navn: Gaaviga Sureskaran
 
 Kort beskrivelse av applikasjon:
